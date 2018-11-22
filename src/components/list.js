@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./list.css";
 
 class List extends Component {
-  static propTypes = {
-    contacts: PropTypes.array.isRequired
-  };
   render() {
     return (
       <div className="listArea">

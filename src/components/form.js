@@ -1,14 +1,38 @@
 import React, { Component } from "react";
 
 class Form extends Component {
-  state = {};
+  constructor() {
+    super();
+    this.onChange = this.onChange.bind(this);
+  }
+  state = {
+    name: "",
+    phone: ""
+  };
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
   render() {
     return (
       <div>
         <form>
-          <input name="name" id="name" placeholder="İsim Girin" />
+          <input
+            name="name"
+            id="name"
+            value={this.state.name}
+            onChange={this.onChange}
+            placeholder="İsim Girin"
+          />
           <br />
-          <input name="phone" id="phone" placeholder="Numara Girin" />
+          <input
+            name="phone"
+            id="phone"
+            value={this.state.phone}
+            onChange={this.onChange}
+            placeholder="Numara Girin"
+          />
           <button>Ekle</button>
         </form>
       </div>
